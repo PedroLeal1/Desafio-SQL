@@ -1,5 +1,6 @@
 # Desafio-SQL
 Desafio do workshop de dados dia 21/02/2025
+Aluno: Pedro Henrique Leal Vieira
 
 1- Crie um novo Schema com nome DESAFIO;
 2- Crie duas novas tabelas com pelo menos 4 colunas
