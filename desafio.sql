@@ -1,3 +1,5 @@
+-- Fábrica de Software - Dados - 21/02/2025
+-- Pedro Henrique Leal Vieira - P6 - Ciências da Computação 
 CREATE SCHEMA DESAFIO;
 
 CREATE TABLE Jogadores(
