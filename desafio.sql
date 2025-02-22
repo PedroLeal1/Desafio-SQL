@@ -10,6 +10,15 @@ CREATE TABLE Jogadores(
     nacionalidade VARCHAR(45)
 );
 
+CREATE TABLE Estatisticas(
+    id_estatistica SERIAL PRIMARY KEY,
+    nome VARCHAR(45) REFERENCES Jogadores(nome),
+    gols INT,
+    assistencias INT,
+    partidas_jogadas INT,
+    amarelos INT
+);
+
 INSERT INTO Jogadores(id_jogador, nome, idade, posicao, nacionalidade)  
 VALUES  
 (1, 'Raul', 27, 'Goleiro', 'Brasil'),  
@@ -32,18 +41,6 @@ VALUES
 (20, 'Jeffinho', 25, 'Atacante', 'Brasil'),    
 (22, 'Matheus Martins', 21, 'Atacante', 'Brasil'),  
 (23, 'Rwan Cruz', 23, 'Atacante', 'Brasil');
-
-SELECT *
-FROM Jogadores;
-
-CREATE TABLE Estatisticas(
-    id_estatistica SERIAL PRIMARY KEY,
-    nome VARCHAR(45) REFERENCES Jogadores(nome),
-    gols INT,
-    assistencias INT,
-    partidas_jogadas INT,
-    amarelos INT
-);
 
 INSERT INTO Estatisticas(nome, gols, assistencias, partidas_jogadas, amarelos) 
 VALUES
@@ -72,8 +69,13 @@ VALUES
 ('Rwan Cruz', 1, 1, 20, 1);
 
 SELECT *
+FROM Jogadores;
+
+SELECT *
 FROM Estatisticas
 
+--Agregação
+    
 SELECT 
     nome, 
     SUM(gols + assistencias) AS participacoes_em_gols
@@ -88,6 +90,8 @@ GROUP BY nome;
 
 SELECT COUNT(id_jogador)
 FROM DESAFIO.Jogadores;
+
+--Agrupamento
 
 SELECT 
     nome, 
